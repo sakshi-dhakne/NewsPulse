@@ -4,11 +4,11 @@ from email.mime.text import MIMEText
 
 def send_email(message):
 
-    sender_email = "sakshidhakne5@gmail.com"
+    sender_email = "myemail@gmail.com"
 
-    app_password = "wvhq fwow mjrd gxhp"
+    app_password = "my_password"
 
-    receiver_email = "vaishujaybhaye10@gmail.com"
+    receiver_email = "receivermail@gmail.com"
 
     msg = MIMEText(message)
 
