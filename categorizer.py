@@ -2,16 +2,49 @@ def categorize_news(title):
 
     title = title.lower()
 
-    if any(word in title for word in ["election", "government", "minister", "parliament"]):
+    politics_words = [
+        "government",
+        "president",
+        "minister",
+        "election",
+        "parliament"
+    ]
+
+    ai_words = [
+        "ai",
+        "artificial intelligence",
+        "openai",
+        "chatgpt",
+        "gemini"
+    ]
+
+    sports_words = [
+        "cricket",
+        "football",
+        "tennis",
+        "match",
+        "sports"
+    ]
+
+    accident_words = [
+        "accident",
+        "crash",
+        "murder",
+        "crime",
+        "death",
+        "killed"
+    ]
+
+    if any(word in title for word in politics_words):
         return "Politics"
 
-    elif any(word in title for word in ["ai", "artificial intelligence", "chatgpt", "openai"]):
+    elif any(word in title for word in ai_words):
         return "AI"
 
-    elif any(word in title for word in ["match", "football", "cricket", "sports"]):
+    elif any(word in title for word in sports_words):
         return "Sports"
 
-    elif any(word in title for word in ["accident", "crash", "murder", "crime"]):
+    elif any(word in title for word in accident_words):
         return "Accident/Crime"
 
     else:
