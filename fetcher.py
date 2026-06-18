@@ -1,17 +1,22 @@
 import requests
 
-API_KEY = None
+def fetch_news(api_key):
 
-def fetch_news():
     url = (
         f"https://newsapi.org/v2/top-headlines?"
-        f"country=us&apiKey={API_KEY}"
+        f"country=us&pageSize=20&apiKey={api_key}"
     )
 
-    response = requests.get(url)
+    try:
+        response = requests.get(url, timeout=10)
 
-    if response.status_code == 200:
-        data = response.json()
-        return data["articles"]
+        if response.status_code == 200:
+            data = response.json()
+            return data.get("articles", [])
 
-    return []
+        print("Failed to fetch news:", response.status_code)
+        return []
+
+    except requests.exceptions.RequestException as error:
+        print("Error:", error)
+        return []
