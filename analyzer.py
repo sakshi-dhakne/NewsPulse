@@ -1,10 +1,9 @@
 def categorize_news(article):
 
-    text = (
-        article.get("title", "") +
-        " " +
-        article.get("description", "")
-    ).lower()
+    title = article.get("title") or ""
+    description = article.get("description") or ""
+
+    text = (title + " " + description).lower()
 
     if any(word in text for word in ["ai", "technology", "software"]):
         return "Technology"
@@ -16,8 +15,3 @@ def categorize_news(article):
         return "Business"
 
     return "General"
-
-
-def get_summary(article):
-
-    return article.get("description", "No summary available")

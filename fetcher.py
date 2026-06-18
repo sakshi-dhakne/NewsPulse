@@ -13,10 +13,11 @@ def fetch_news(api_key):
         if response.status_code == 200:
             data = response.json()
             return data.get("articles", [])
-
+        
         print("Failed to fetch news:", response.status_code)
         return []
 
     except requests.exceptions.RequestException as error:
         print("Error:", error)
         return []
+    
