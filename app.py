@@ -1,5 +1,5 @@
 from fetcher import fetch_news
-from analyzer import categorize_news
+from analyzer import categorize_news,get_summary
 from email_sender import send_email
 
 from config import (
