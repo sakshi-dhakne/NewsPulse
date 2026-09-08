@@ -11,6 +11,10 @@ from config import (
 
 articles = fetch_news(NEWS_API_KEY)
 
+if not articles:
+    print("No news articles found. Exiting.")
+    exit()
+
 digest = ""
 
 for article in articles[:15]:
@@ -30,4 +34,4 @@ send_email(
     digest
 )
 
-print("Articles fetched:", len(article))
+print("Articles fetched:", len(articles))

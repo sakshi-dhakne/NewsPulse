@@ -2,22 +2,22 @@
 
 ## Overview
 
-NewsPulse is a Python application that fetches the latest news articles using NewsAPI, categorizes them based on their content, and sends a summarized news digest via email.
+NewsPulse is a Python application that fetches the latest news articles using NewsAPI, categorizes them into different topics, generates a categorized news digest, and delivers it via email.
 
 ## Features
 
-* Fetches real-time news articles from NewsAPI
-* Categorizes news into different topics
-* Generates a news digest
-* Sends news summaries through email
+* Fetches the latest news articles from NewsAPI
+* Categorizes articles into different topics using keyword-based classification
+* Generates a categorized news digest
+* Delivers the news digest through email
 * Uses environment variables to securely store API keys and email credentials
 
 ## Technologies Used
 
 * Python
 * Requests
-* SMTP
 * NewsAPI
+* SMTP
 * Python Dotenv
 
 ## Project Structure
@@ -26,7 +26,7 @@ newspulse/
 
 ├── app.py
 
-├── news_fetcher.py
+├── fetcher.py
 
 ├── analyzer.py
 
@@ -38,8 +38,6 @@ newspulse/
 
 ├── .gitignore
 
-├── .env
-
 ├── .env.example
 
 └── README.md
@@ -48,11 +46,11 @@ newspulse/
 
 1. Clone the repository
 
-git clone <repository-url>
+git clone https://github.com/sakshi-dhakne/NewsPulse.git
 
 2. Navigate to the project directory
 
-cd news-aggregator
+cd NewsPulse
 
 3. Install dependencies
 
@@ -61,12 +59,9 @@ pip install -r requirements.txt
 4. Create a .env file and add your credentials
 
 NEWS_API_KEY=your_api_key
-
-EMAIL=[your_email@gmail.com](mailto:your_email@gmail.com)
-
+EMAIL=your_email@gmail.com
 EMAIL_PASSWORD=your_app_password
-
-RECEIVER_EMAIL=[receiver@gmail.com](mailto:receiver@gmail.com)
+RECEIVER_EMAIL=receiver@gmail.com
 
 ## Usage
 
