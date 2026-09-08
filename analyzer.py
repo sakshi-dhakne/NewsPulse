@@ -21,6 +21,18 @@ def categorize_news(article):
         "economy", "investment", "company", "earnings"
     ]
 
+    politics_keywords = [
+    "election", "government", "president", "senate",
+    "congress", "parliament", "minister", "policy",
+    "vote", "political"
+    ]
+
+    crime_keywords = [
+    "crime", "murder", "arrest", "police",
+    "shooting", "robbery", "theft", "fraud",
+    "assault", "investigation"
+    ]
+
     if any(keyword in text for keyword in technology_keywords):
         return "Technology"
 
@@ -29,5 +41,10 @@ def categorize_news(article):
 
     elif any(keyword in text for keyword in business_keywords):
         return "Business"
+
+    elif any(keyword in text for keyword in politics_keywords):
+        return "Politics"
+    elif any(keyword in text for keyword in crime_keywords):
+        return "Crime"
 
     return "General"
